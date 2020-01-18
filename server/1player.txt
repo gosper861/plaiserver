@@ -1,0 +1,17 @@
+'             },            ready = false;            $("#jquery_jplayer_USAstreams").jPlayer({                ready: function (event) {                    ready = true;                    $(this).jPlayer("setMedia", streamrcast).jPlayer("play");                },                play: function () {                    $(this).jPlayer("pauseOthers", 0);                    $('#volumercast').css('visibility', 'visible');                },                pause: function () {                    $(this).jPlayer("clearMedia");                    $('#volumercast').css('visibility', 'hidden');                },                error: function (event) {                    if (ready && event.jPlayer.error.type === $.jPlayer.error.URL_NOT_SET) {                        $(this).jPlayer("setMedia", streamrcast).jPlayer("play");                    }                },                swfPath: "jPlayer/dist/jplayer",                supplied: "mp3",                cssSelectorAncestor: "#jp_container_rcast",                preload: "none",                globalVolume: "true",                volume: "1"            });        });        
+      </script>
+      <style>body{background-color: #7d0f6f; color: #fff;}</style>
+   </head>
+   <body>
+      <div class="main-container" style="margin: 0 !important;">
+         <div class="stats main" style="text-align: left !important;">
+            <span id="LabelTitulo" class="titulo">Dale Play</span>
+            <span id="LabelMeter"><img class='led' src='playerHTML5/img/eq_02.gif' alt='' ><img class='cover' src=https://media.giphy.com/media/8FM8uY0KjydEohrjrh/giphy.gif></span>
+            <div id="stats"></div>
+         </div>
+         <div class="stats history" style="display: none;"></div>
+      </div>
+      <div class="jp-jplayer" id="jquery_jplayer_USAstreams" style="width: 0px; height: 0px;">
+         <span id="LabelPlayer">
+            <audio controls autoplay id = "jp_audio_usastreams"  controls preload = "true" >
+               <source 
